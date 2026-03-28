@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Saboteur: Analog damage for digital work. High-resolution textures, assets, and horror-adjacent comics.">
+  <title>Saboteur â Analog Textures & Comics</title>
+  <link rel="icon" type="image/svg+xml" href="assets/logo/saboteur-logo.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Shared Navigation -->
+  <div id="site-header"></div>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="hero" class="fade-in">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Analog damage for digital work.</h1>
+          <p>An experimental studio built for comics, textures, and physical goods. Everything starts analog, is destroyed on purpose, then scanned and prepared for digital use.</p>
+          <div class="hero-buttons">
+            <a href="free-library/" class="btn btn-primary">Browse Free Library</a>
+            <a href="#store" class="btn btn-secondary">Visit Store</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FREE LIBRARY SECTION (Featured 9) -->
+    <section id="library" class="fade-in">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Free Library</h2>
+          <p class="section-subtitle">High-resolution textures and assets. Download for free.</p>
+        </div>
+        <div class="grid" id="homepage-library-grid">
+          <!-- Populated by inline script below with featured items -->
+        </div>
+        <div style="text-align: center; margin-top: 48px;">
+          <a href="free-library/" class="btn btn-secondary">View All Free Resources</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- STORE SECTION -->
+    <section id="store" class="fade-in">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Store</h2>
+          <p class="section-subtitle">Premium texture collections and brush packs.</p>
+        </div>
+        <div class="store-grid">
+          <div class="card">
+            <div class="card-preview">
+              <span class="card-preview-text">Premium Brush Packs</span>
+            </div>
+            <h3 class="card-title">Premium Brush Packs</h3>
+            <p class="card-description">Professional Procreate and Photoshop brush sets. Built from real analog marks.</p>
+            <a href="https://saboteurcomics.gumroad.com" target="_blank" rel="noopener noreferrer" class="card-link">Purchase on Gumroad â</a>
+          </div>
+          <div class="card">
+            <div class="card-preview">
+              <span class="card-preview-text">Premium Textures</span>
+            </div>
+            <h3 class="card-title">Premium Textures</h3>
+            <p class="card-description">Extended high-resolution texture collections for commercial projects.</p>
+            <a href="https://saboteurcomics.gumroad.com" target="_blank" rel="noopener noreferrer" class="card-link">Purchase on Gumroad â</a>
+          </div>
+          <div class="card">
+            <div class="card-preview">
+              <span class="card-preview-text">City Texture Collection</span>
+            </div>
+            <h3 class="card-title">City Texture Collection</h3>
+            <p class="card-description">Street-level textures from Athens, Budapest, and Prague. Graffiti, decay, and urban grit.</p>
+            <a href="https://saboteurcomics.gumroad.com" target="_blank" rel="noopener noreferrer" class="card-link">Purchase on Gumroad â</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMICS SECTION -->
+    <section id="comics" class="fade-in">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Comics</h2>
+          <p class="section-subtitle">Horror-adjacent stories and visual experiments.</p>
+        </div>
+        <div class="comics-list">
+          <div class="comic-entry">
+            <h3>Songs of Tragedy</h3>
+            <p>A horror anthology exploring loss, obsession, and the weight of memory.</p>
+            <a href="#" class="comic-link">Read more â</a>
+          </div>
+          <div class="comic-entry">
+            <h3>Weathered & Destroyed</h3>
+            <p>Process documentation. How analog materials become digital tools.</p>
+            <a href="#" class="comic-link">Read more â</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="fade-in">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">About</h2>
+        </div>
+        <div class="about-content">
+          <p>Saboteur is a small independent studio making analog-damaged assets and horror-adjacent comics. We turn real-world damageâstains, tears, newsprint, old postcardsâinto high-resolution tools for designers, illustrators, and comic artists. Built by hand. Destroyed on purpose.</p>
+          <p class="about-contact">Get in touch â <a href="mailto:saboteurcomics@gmail.com">saboteurcomics@gmail.com</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Subscribe Block -->
+    <div id="subscribe-block"></div>
+  </main>
+
+  <!-- Shared Footer -->
+  <div id="site-footer"></div>
+
+  <script src="site-config.js"></script>
+  <script src="components.js"></script>
+  <script>
+    // Populate homepage library grid with featured items only
+    document.addEventListener('DOMContentLoaded', function() {
+      var grid = document.getElementById('homepage-library-grid');
+      if (grid && typeof FREE_LIBRARY !== 'undefined') {
+        var featured = FREE_LIBRARY.filter(function(r) { return r.featured; });
+        var basePath = './';
+        featured.forEach(function(resource) {
+          var card = document.createElement('a');
+          card.href = basePath + 'free-library/resource.html?id=' + resource.id;
+          card.className = 'card library-card';
+          card.innerHTML =
+            '<div class="card-preview"><span class="card-preview-text">' + resource.title + '</span></div>' +
+            '<h3 class="card-title">' + resource.title + '</h3>' +
+            '<p class="card-description">' + resource.shortDescription + '</p>' +
+            '<span class="card-link">View Resource â</span>';
+          grid.appendChild(card);
+        });
+      }
+    });
+  </script>
+</body>
+</html>
