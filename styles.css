@@ -1,0 +1,1183 @@
+/* ======================================================================
+   SABOTEUR COMICS - SHARED STYLESHEET
+   Actual Source Inspired: Extreme Whitespace, Ultra-Clean Typography
+   No Underlines, No Shadows, No Decorative Hovers
+   ====================================================================== */
+
+/* ======================================================================
+   1. CSS CUSTOM PROPERTIES
+   ====================================================================== */
+:root {
+  --color-bg: #ffffff;
+  --color-text: #000000;
+  --color-accent: #FF3000;
+  --color-gray-100: #f5f5f5;
+  --color-gray-200: #e8e8e8;
+  --color-gray-300: #cccccc;
+  --color-gray-400: #999999;
+  --color-gray-500: #666666;
+  --color-charcoal: #1a1a1a;
+  --font-family: 'Neue Haas Display', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --max-width: 1200px;
+  --header-height: auto;
+}
+
+/* ======================================================================
+   2. @FONT-FACE DECLARATIONS - ALL WEIGHTS & ITALICS
+   ====================================================================== */
+@font-face {
+  font-family: 'Neue Haas Display';
+  src: url('assets/fonts/NeueHaasDisplayXXThin.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Neue Haas Display';
+  src: url('assets/fonts/NeueHaasDisplayXXThinItalic.woff2') format('woff2');
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Neue Haas Display';
+  src: url('assets/fonts/NeueHaasDisplayXThin.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Neue Haas Display';
+  src: url('assets/fonts/NeueHaasDisplayXThinItalic.woff2') format('woff2');
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Neue Haas Display';
+  src: url('assets/fonts/NeueHaasDisplayLight.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Neue Haas Display';
+  src: url('assets/fonts/NeueHaasDisplayLightItalic.woff2') format('woff2');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Neue Haas Display';
+  src: url('assets/fonts/NeueHaasDisplayRoman.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Neue Haas Display';
+  src: url('assets/fonts/NeueHaasDisplayRomanItalic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Neue Haas Display';
+  src: url('assets/fonts/NeueHaasDisplayMediu.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Neue Haas Display';
+  src: url('assets/fonts/NeueHaasDisplayMediumItalic.woff2') format('woff2');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Neue Haas Display';
+  src: url('assets/fonts/NeueHaasDisplayBold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Neue Haas Display';
+  src: url('assets/fonts/NeueHaasDisplayBoldItalic.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Neue Haas Display';
+  src: url('assets/fonts/NeueHaasDisplayBlack.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Neue Haas Display';
+  src: url('assets/fonts/NeueHaasDisplayBlackItalic.woff2') format('woff2');
+  font-weight: 900;
+  font-style: italic;
+}
+
+/* ======================================================================
+   3. RESET & BASE STYLES
+   ====================================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ======================================================================
+   4. CONTAINER & LAYOUT
+   ====================================================================== */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 20px;
+}
+
+@media (min-width: 480px) {
+  .container {
+    padding: 32px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 40px;
+  }
+}
+
+/* ======================================================================
+   5. HEADER & NAVIGATION
+   ====================================================================== */
+.site-header {
+  padding: 48px 0 32px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .site-header {
+    padding: 64px 0 40px;
+  }
+}
+
+.site-title {
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: inherit;
+}
+
+@media (min-width: 768px) {
+  .site-title {
+    font-size: 40px;
+  }
+}
+
+.site-nav {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.site-nav a {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: inherit;
+}
+
+.site-nav .separator {
+  margin: 0 8px;
+  color: var(--color-gray-400);
+  user-select: none;
+}
+
+/* ======================================================================
+   6. BUTTONS
+   ====================================================================== */
+.btn {
+  padding: 14px 32px;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: inline-block;
+  transition: opacity 0.2s ease;
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: var(--color-accent);
+  color: var(--color-bg);
+  border: none;
+}
+
+.btn-primary:hover {
+  opacity: 0.85;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 1px solid var(--color-text);
+  color: var(--color-text);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-text);
+  color: var(--color-bg);
+}
+
+.btn-lg {
+  padding: 16px 40px;
+  font-size: 13px;
+}
+
+/* ======================================================================
+   7. FILE COMPLAINT (Fixed Position)
+   ====================================================================== */
+.file-complaint-link {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 12px;
+  color: var(--color-accent);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  z-index: 100;
+  text-decoration: none;
+}
+
+.complaint-overlay {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.complaint-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.complaint-overlay .complaint-inner {
+  max-width: 500px;
+  text-align: center;
+  padding: 40px;
+}
+
+.complaint-overlay .complaint-text {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.5;
+  margin-bottom: 48px;
+}
+
+@media (min-width: 768px) {
+  .complaint-overlay .complaint-text {
+    font-size: 24px;
+  }
+}
+
+.complaint-overlay .complaint-close {
+  font-size: 13px;
+  font-weight: 500;
+  color: #fff;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 12px 32px;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  transition: border-color 0.2s ease;
+  text-transform: uppercase;
+}
+
+.complaint-overlay .complaint-close:hover {
+  border-color: #fff;
+}
+
+/* ======================================================================
+   8. HERO SECTION
+   ====================================================================== */
+section.hero {
+  padding: 80px 0 60px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  section.hero {
+    padding: 160px 0 120px;
+  }
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin-bottom: 24px;
+}
+
+@media (min-width: 768px) {
+  .hero h1 {
+    font-size: 64px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero h1 {
+    font-size: 72px;
+  }
+}
+
+.hero p {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-gray-500);
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ======================================================================
+   9. VAULT GRID (Free Library)
+   ====================================================================== */
+.vault-hero {
+  padding: 80px 0;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .vault-hero {
+    padding: 60px 0;
+  }
+}
+
+.vault-hero h1 {
+  font-size: 36px;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+@media (min-width: 768px) {
+  .vault-hero h1 {
+    font-size: 48px;
+  }
+}
+
+.vault-hero p {
+  font-size: 14px;
+  color: var(--color-gray-500);
+  max-width: 550px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+  .vault-hero p {
+    font-size: 14px;
+  }
+}
+
+.vault-section {
+  padding: 0 0 120px;
+}
+
+@media (max-width: 767px) {
+  .vault-section {
+    padding: 0 0 60px;
+  }
+}
+
+.tag-filter {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+
+.tag-filter button {
+  padding: 4px 14px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  background: transparent;
+  border: 1px solid var(--color-gray-300);
+  color: var(--color-gray-500);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.tag-filter button:hover {
+  color: var(--color-text);
+  border-color: var(--color-text);
+}
+
+.tag-filter button.active {
+  background: var(--color-text);
+  color: var(--color-bg);
+  border-color: var(--color-text);
+}
+
+.vault-grid {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 480px) {
+  .vault-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .vault-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1280px) {
+  .vault-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.vault-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.vault-card .card-preview {
+  aspect-ratio: 1 / 1;
+  background: var(--color-gray-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.vault-card .card-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vault-card .card-title {
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.vault-card .card-description {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--color-gray-400);
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.vault-card .card-link {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+/* ======================================================================
+   10. RESOURCE PAGE (Individual Product)
+   ====================================================================== */
+.resource-hero {
+  padding: 80px 0 60px;
+}
+
+@media (max-width: 767px) {
+  .resource-hero {
+    padding: 60px 0 40px;
+  }
+}
+
+.resource-hero-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  align-items: flex-start;
+}
+
+@media (min-width: 768px) {
+  .resource-hero-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .resource-hero-inner {
+    gap: 64px;
+  }
+}
+
+.resource-cover {
+  aspect-ratio: 1 / 1;
+  background: var(--color-gray-100);
+  overflow: hidden;
+  width: 100%;
+}
+
+.resource-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.resource-info h1 {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+@media (min-width: 768px) {
+  .resource-info h1 {
+    font-size: 36px;
+  }
+}
+
+.resource-pitch {
+  font-size: 14px;
+  color: var(--color-gray-500);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.resource-benefits {
+  list-style: none;
+  margin-bottom: 32px;
+}
+
+.resource-benefits li {
+  padding-left: 20px;
+  position: relative;
+  font-size: 13px;
+  color: var(--color-gray-500);
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.resource-benefits li::before {
+  content: "â";
+  position: absolute;
+  left: 0;
+}
+
+.resource-cta {
+  margin-bottom: 24px;
+}
+
+.resource-file-info {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  color: var(--color-gray-400);
+}
+
+.resource-file-info span {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.resource-details {
+  padding: 60px 0;
+  border-top: 1px solid var(--color-gray-200);
+}
+
+@media (max-width: 767px) {
+  .resource-details {
+    padding: 40px 0;
+  }
+}
+
+.resource-details-inner {
+  max-width: 640px;
+}
+
+.resource-details h2 {
+  font-weight: 500;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 20px;
+  color: var(--color-gray-400);
+}
+
+.resource-details p {
+  font-size: 14px;
+  color: var(--color-gray-500);
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+
+.resource-details .audience {
+  font-style: italic;
+}
+
+.resource-creator {
+  padding: 60px 0;
+  border-top: 1px solid var(--color-gray-200);
+}
+
+@media (max-width: 767px) {
+  .resource-creator {
+    padding: 40px 0;
+  }
+}
+
+.resource-creator-inner {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  max-width: 640px;
+}
+
+.creator-logo {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  background: var(--color-gray-100);
+}
+
+.creator-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.creator-text h3 {
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.creator-text p {
+  font-size: 13px;
+  color: var(--color-gray-500);
+  line-height: 1.5;
+}
+
+.resource-not-found {
+  padding: 160px 0;
+  text-align: center;
+}
+
+.resource-not-found h1 {
+  font-size: 36px;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
+.resource-not-found p {
+  font-size: 14px;
+  color: var(--color-gray-500);
+  margin-bottom: 32px;
+}
+
+/* ======================================================================
+   11. CAROUSEL
+   ====================================================================== */
+.carousel-section {
+  padding: 80px 0;
+  border-top: 1px solid var(--color-gray-200);
+}
+
+@media (max-width: 767px) {
+  .carousel-section {
+    padding: 60px 0;
+  }
+}
+
+.carousel-section h2 {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-gray-400);
+  margin-bottom: 32px;
+  font-weight: 500;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 8px;
+  scrollbar-width: none;
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-item {
+  flex: 0 0 220px;
+  scroll-snap-align: start;
+  text-decoration: none;
+  color: inherit;
+}
+
+.carousel-item .card-preview {
+  aspect-ratio: 1 / 1;
+  margin-bottom: 8px;
+  background: var(--color-gray-100);
+}
+
+.carousel-item .card-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-item .card-title {
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.carousel-item .card-link {
+  font-size: 11px;
+  color: var(--color-accent);
+  font-weight: 500;
+}
+
+/* ======================================================================
+   12. SUBSCRIBE BLOCK
+   ====================================================================== */
+.subscribe-block {
+  padding: 80px 0;
+  background: var(--color-gray-100);
+}
+
+@media (max-width: 767px) {
+  .subscribe-block {
+    padding: 60px 0;
+  }
+}
+
+.subscribe-content {
+  text-align: center;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.subscribe-content h2 {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.subscribe-content p {
+  font-size: 13px;
+  color: var(--color-gray-500);
+  margin-bottom: 28px;
+}
+
+.subscribe-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+@media (min-width: 480px) {
+  .subscribe-form {
+    flex-direction: row;
+    gap: 8px;
+    justify-content: center;
+  }
+}
+
+.subscribe-form input {
+  font-size: 13px;
+  padding: 10px 14px;
+  border: 1px solid var(--color-gray-300);
+  background: var(--color-bg);
+  font-family: inherit;
+  width: 100%;
+}
+
+@media (min-width: 480px) {
+  .subscribe-form input {
+    width: auto;
+    flex: 1;
+    max-width: 280px;
+  }
+}
+
+.subscribe-form input::placeholder {
+  color: var(--color-gray-400);
+}
+
+.subscribe-form button {
+  padding: 10px 28px;
+  background: var(--color-text);
+  color: var(--color-bg);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  width: 100%;
+}
+
+@media (min-width: 480px) {
+  .subscribe-form button {
+    width: auto;
+  }
+}
+
+.subscribe-contact {
+  margin-top: 12px;
+  font-size: 11px;
+  color: var(--color-gray-400);
+}
+
+/* ======================================================================
+   13. FOOTER
+   ====================================================================== */
+.site-footer {
+  border-top: 1px solid var(--color-charcoal);
+  padding: 24px 0 16px;
+  font-size: 11px;
+  color: var(--color-gray-500);
+  letter-spacing: 0.02em;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media (min-width: 768px) {
+  .footer-inner {
+    padding: 0 40px;
+  }
+}
+
+.footer-left {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.footer-right {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.footer-bottom {
+  margin-top: 12px;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  width: 100%;
+}
+
+/* ======================================================================
+   14. STRAY (Pixel Cat)
+   ====================================================================== */
+.stray-container {
+  position: relative;
+  display: inline-block;
+}
+
+.stray-house {
+  width: 20px;
+  height: 16px;
+  position: relative;
+  display: inline-block;
+}
+
+.stray-house .door {
+  transition: transform 0.3s ease;
+}
+
+.stray-cat {
+  width: 16px;
+  height: 16px;
+  image-rendering: pixelated;
+}
+
+/* ======================================================================
+   15. SHOP PAGE
+   ====================================================================== */
+.shop-hero {
+  padding: 80px 0;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .shop-hero {
+    padding: 60px 0;
+  }
+}
+
+.shop-card {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.shop-card h2 {
+  font-weight: 500;
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.shop-card p {
+  font-size: 14px;
+  color: var(--color-gray-500);
+  margin-bottom: 24px;
+}
+
+.shop-links {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.shop-links a {
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ======================================================================
+   16. PUBLISH PAGE
+   ====================================================================== */
+.publish-hero {
+  padding: 80px 0;
+}
+
+@media (max-width: 767px) {
+  .publish-hero {
+    padding: 60px 0;
+  }
+}
+
+.publish-hero h1 {
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+@media (min-width: 768px) {
+  .publish-hero h1 {
+    font-size: 36px;
+  }
+}
+
+.publish-hero .press-subtitle {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-accent);
+  margin-bottom: 32px;
+  font-weight: 500;
+}
+
+.publish-content {
+  max-width: 600px;
+}
+
+.publish-content p {
+  font-size: 14px;
+  color: var(--color-gray-500);
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+
+/* ======================================================================
+   17. CONTACT PAGE
+   ====================================================================== */
+.contact-hero {
+  padding: 80px 0;
+}
+
+@media (max-width: 767px) {
+  .contact-hero {
+    padding: 60px 0;
+  }
+}
+
+.contact-hero h1 {
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 32px;
+}
+
+.contact-form {
+  max-width: 500px;
+}
+
+.contact-form label {
+  display: block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: var(--color-gray-500);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  border-bottom: 1px solid var(--color-gray-300);
+  font-family: inherit;
+  font-size: 14px;
+  margin-bottom: 24px;
+  background: transparent;
+  outline: none;
+  transition: border-color 0.2s ease;
+  color: var(--color-text);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-bottom-color: var(--color-text);
+}
+
+.contact-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* ======================================================================
+   18. FADE-IN ANIMATION
+   ====================================================================== */
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+}
+
+/* ======================================================================
+   19. UTILITY CLASSES
+   ====================================================================== */
+.text-accent {
+  color: var(--color-accent);
+}
+
+.text-muted {
+  color: var(--color-gray-500);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-lg {
+  margin-top: 80px;
+}
+
+/* ======================================================================
+   20. GENERAL SECTIONS
+   ====================================================================== */
+section {
+  padding: 120px 0;
+}
+
+@media (max-width: 767px) {
+  section {
+    padding: 60px 0;
+  }
+}
+
+section:first-of-type {
+  padding-top: 0;
+}
+
+header {
+  background: var(--color-bg);
+  position: relative;
+  z-index: 1000;
+}
